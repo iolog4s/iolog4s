@@ -1,9 +1,12 @@
 # iolog4s
+[![Maven Central](https://img.shields.io/maven-central/v/org.iolog42/org.iolog42_2.12.svg)](https://maven-badges.herokuapp.com/maven-central/org.iolog42/org.iolog42_2.12) [![Sonatype](https://img.shields.io/nexus/r/https/oss.sonatype.org/org.iolog42/org.iolog42_2.12.svg)](https://oss.sonatype.org/#nexus-search;quick~iolog42_2.12)  [![Scala](https://img.shields.io/badge/scala-2.12.5-brightgreen.svg)](https://github.com/scala/scala/releases/tag/v2.12.5)
+
+-------------------------
 
 Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
 ```
-"iolog4s.org" %% "iolog4s" %% "0.0.1-SNAPSHOT"
+"iolog4s.org" %% "iolog4s" % "0.0.1-SNAPSHOT"
 ```
 
 ## about
