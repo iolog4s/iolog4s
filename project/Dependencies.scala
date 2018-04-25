@@ -24,7 +24,7 @@ import sbt._
   *
   */
 object Dependencies {
-  lazy val `scala_2.12`:     String      = "2.12.4"
+  lazy val `scala_2.12`:     String      = "2.12.5"
   lazy val `scala_2.11`:     String      = "2.11.12"
   lazy val mainScalaVersion: String      = `scala_2.12`
   lazy val scalaVersions:    Seq[String] = Seq(`scala_2.12`, `scala_2.11`)

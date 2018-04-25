@@ -47,14 +47,18 @@ object Settings {
        * https://github.com/oleg-py/better-monadic-for
        */
       addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.2.1"),
-      scalacOptions ++= customScalaCompileFlagList ++ betterForPluginCompilerFlags
+      scalacOptions ++= {
+        if (scalaVersion.value == Dependencies.`scala_2.11`)
+          scala2_11_flags
+        else scala2_12_flags
+      } ++ betterForPluginCompilerFlags
     )
 
   /**
     * tpolecat's glorious compile flag list:
     * https://tpolecat.github.io/2017/04/25/scalac-flags.html
     */
-  def customScalaCompileFlagList: Seq[String] = Seq(
+  def scala2_12_flags: Seq[String] = Seq(
     "-deprecation", // Emit warning and location for usages of deprecated APIs.
     "-encoding",
     "utf-8", // Specify character encoding used by source files.
@@ -109,6 +113,19 @@ object Settings {
     //"-Xstrict-patmat-analysis",          // more accurate reporting of failures of match exhaustivity
     //"-Xlint:strict-unsealed-patmat",     // warn on inexhaustive matches against unsealed traits
     //"-Ykind-polymorphism",               // type and method definitions with type parameters of arbitrary kinds
+  )
+
+  def scala2_11_flags: Seq[String] = scala2_12_flags.filterNot(flagsNotAvailableIn2_11.apply)
+
+  private val flagsNotAvailableIn2_11: Set[String] = Set(
+    "-Xlint:constant", // Evaluation of a constant arithmetic expression results in an error.
+    "-Ywarn-extra-implicit", // Warn when more than one implicit parameter section is defined.
+    "-Ywarn-unused:implicits", // Warn if an implicit parameter is unused.
+    "-Ywarn-unused:imports", // Warn if an import selector is not referenced.
+    "-Ywarn-unused:locals", // Warn if a local definition is unused.
+    "-Ywarn-unused:params", // Warn if a value parameter is unused.
+    "-Ywarn-unused:patvars", // Warn if a variable bound in a pattern is unused.
+    "-Ywarn-unused:privates" // Warn if a private member is unused.
   )
 
   /**
