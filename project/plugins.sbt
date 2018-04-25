@@ -1,7 +1,7 @@
 /**
-  * Copyright (c) 2017-2018 BusyMachines
+  * Copyright (c) 2018 iolog4s project authors and contributors
   *
-  * See company homepage at: https://www.busymachines.com/
+  * See project homepage at: http://iolog4s.org/
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License.
@@ -17,10 +17,8 @@
   */
 
 /**
-  * Helps us publish the artifacts to sonatype, which in turn
-  * pushes to maven central. Please follow instructions of setting
-  * up as described in:
-  * http://busymachines.github.io/busymachines-commons/docs/publishing-artifacts.html
+  * Helps publish the artifacts to sonatype, which in turn
+  * pushes to maven central
   *
   * https://github.com/xerial/sbt-sonatype
   */
@@ -29,9 +27,6 @@ addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "2.3")
 /**
   *
   * Signs all the jars, used in conjunction with sbt-sonatype.
-  *
-  * Do not forget to include this in your global plugins as described in:
-  * http://busymachines.github.io/busymachines-commons/docs/publishing-artifacts.html
   *
   * https://github.com/sbt/sbt-pgp
   */
