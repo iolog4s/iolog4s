@@ -23,11 +23,8 @@ import cats.effect.Sync
 import language.experimental.macros
 import org.slf4j.{Logger => JLogger}
 
-import scala.annotation.implicitNotFound
-
 object Logger {
 
-  @implicitNotFound("Could not find implicit cats.effect.Sync typeclass")
   def create[F[_]]: org.iolog4s.Logger[F] = macro LoggerMacros.getLoggerImpl[F[_]]
 
   def create[F[_]: Sync](name: String): org.iolog4s.Logger[F] = new Logger(org.slf4j.LoggerFactory.getLogger(name))
@@ -75,7 +72,7 @@ object Logger {
   }
 }
 
-final class Logger[F[_]: Sync] private (val logger: JLogger) {
+final class Logger[F[_]: Sync](val logger: JLogger) {
   private[iolog4s] val F: Sync[F] = Sync[F]
 
   /** The name of this logger. */
