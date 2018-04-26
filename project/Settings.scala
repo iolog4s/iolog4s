@@ -52,7 +52,7 @@ object Settings {
           scala2_11_flags
         else scala2_12_flags
       } ++ betterForPluginCompilerFlags
-    )
+    ) ++ PublishingSettings.sonatypeSettings
 
   /**
     * tpolecat's glorious compile flag list:
