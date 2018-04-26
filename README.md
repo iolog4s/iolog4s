@@ -8,7 +8,7 @@
 Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
 ```
-"iolog4s.org" %% "iolog4s" % "0.0.1-SNAPSHOT"
+"iolog4s.org" %% "iolog4s" % "0.0.1"
 ```
 
 ## about
