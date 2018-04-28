@@ -1,0 +1,6 @@
+options:
+  - title: Getting Started
+    url: docs/index.html
+
+  - title: MDC-ish
+    url: docs/mdc.html
