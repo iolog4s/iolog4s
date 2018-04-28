@@ -47,7 +47,7 @@ object PublishingSettings {
 
   def sonatypeSettings: Seq[Setting[_]] = Seq(
     useGpg                     := true,
-    sonatypeProfileName        := Settings.organizationName,
+    sonatypeProfileName        := CommonSettings.organizationName,
     publishArtifact in Compile := true,
     publishArtifact in Test    := false,
     publishMavenStyle          := true,

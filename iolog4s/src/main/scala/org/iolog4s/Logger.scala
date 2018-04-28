@@ -25,7 +25,7 @@ import org.slf4j.{Logger => JLogger}
 
 object Logger {
 
-  def create[F[_]]: org.iolog4s.Logger[F] = macro LoggerMacros.getLoggerImpl[F[_]]
+  def create[F[_]: Sync]: org.iolog4s.Logger[F] = macro LoggerMacros.getLoggerImpl[F[_]]
 
   def create[F[_]: Sync](name: String): org.iolog4s.Logger[F] = new Logger(org.slf4j.LoggerFactory.getLogger(name))
 
@@ -73,7 +73,7 @@ object Logger {
 }
 
 final class Logger[F[_]: Sync](val logger: JLogger) {
-  private[iolog4s] val F: Sync[F] = Sync[F]
+  val F: Sync[F] = Sync[F]
 
   /** The name of this logger. */
   @inline def name = logger.getName
@@ -89,13 +89,6 @@ final class Logger[F[_]: Sync](val logger: JLogger) {
   @inline def isErrorEnabled: Boolean = logger.isErrorEnabled
 
   import Logger._
-
-  /* These will allow maximum inlining if the type is known at compile time. */
-  @inline def apply(lvl: Trace.type): TraceLevelLogger = new TraceLevelLogger(logger)
-  @inline def apply(lvl: Debug.type): DebugLevelLogger = new DebugLevelLogger(logger)
-  @inline def apply(lvl: Info.type):  InfoLevelLogger  = new InfoLevelLogger(logger)
-  @inline def apply(lvl: Warn.type):  WarnLevelLogger  = new WarnLevelLogger(logger)
-  @inline def apply(lvl: Error.type): ErrorLevelLogger = new ErrorLevelLogger(logger)
 
   def apply(level: LogLevel): LevelLogger = level match {
     case Trace => new TraceLevelLogger(logger)

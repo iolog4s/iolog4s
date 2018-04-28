@@ -15,8 +15,18 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-lazy val root = Project(id = "iolog4s", base = file("."))
-  .settings(Settings.commonSettings)
+lazy val root = Project(id = "root-iolog4s", base = file("."))
+  .disablePlugins(MicrositesPlugin)
+  .disablePlugins(TutPlugin)
+  .settings(CommonSettings.commonSettings)
+  .settings(PublishingSettings.noPublishSettings)
+  .aggregate(iolog4s)
+
+lazy val iolog4s = project
+  .disablePlugins(MicrositesPlugin)
+  .disablePlugins(TutPlugin)
+  .settings(CommonSettings.commonSettings)
+  .settings(PublishingSettings.sonatypeSettings)
   .settings(
     libraryDependencies ++= Seq(
       Dependencies.scalaReflect % scalaVersion.value withSources (),
