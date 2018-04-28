@@ -18,7 +18,7 @@
 import sbt._
 import Keys._
 
-object Settings {
+object CommonSettings {
 
   lazy val organizationName: String = "org.iolog4s"
 
@@ -52,7 +52,7 @@ object Settings {
           scala2_11_flags
         else scala2_12_flags
       } ++ betterForPluginCompilerFlags
-    ) ++ PublishingSettings.sonatypeSettings
+    )
 
   /**
     * tpolecat's glorious compile flag list:

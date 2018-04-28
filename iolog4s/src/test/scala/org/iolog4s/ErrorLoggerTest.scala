@@ -5,7 +5,7 @@ import org.scalatest.FunSpec
 
 /**
   *
-  * @author Lorand Szakacs, lsz@lorandszakacs.com
+  * @author Lorand Szakacs, https://github.com/lorandszakacs
   * @since 25 Apr 2018
   *
   */

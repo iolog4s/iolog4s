@@ -18,8 +18,6 @@
   */
 package org.iolog4s
 
-import language.experimental.macros
-
 import scala.annotation.tailrec
 import scala.reflect.macros.{blackbox, whitebox}
 
@@ -30,7 +28,7 @@ import scala.reflect.macros.{blackbox, whitebox}
 private[iolog4s] object LoggerMacros {
 
   /** Get a logger by reflecting the enclosing class name. */
-  final def getLoggerImpl[F: c.WeakTypeTag](c: blackbox.Context) = {
+  final def getLoggerImpl[F: c.WeakTypeTag](c: blackbox.Context)(f: c.Expr[F]) = {
     import c.universe._
 
     @tailrec def findEnclosingClass(sym: c.universe.Symbol): c.universe.Symbol = {
@@ -49,11 +47,11 @@ private[iolog4s] object LoggerMacros {
 
     assert(cls.isModule || cls.isClass, "Enclosing class is always either a module or a class")
 
-    def loggerByParam(param: c.Tree) = {
-      q"new _root_.org.iolog4s.Logger(_root_.org.slf4j.LoggerFactory.getLogger(...${List(param)}))"
+    def loggerByParam(param: c.Tree)(f: c.Expr[F]) = {
+      q"new _root_.org.iolog4s.Logger(_root_.org.slf4j.LoggerFactory.getLogger(...${List(param)}))($f)"
     }
 
-    def loggerBySymbolName(s: Symbol) = {
+    def loggerBySymbolName(s: Symbol)(f: c.Expr[F]) = {
       def fullName(s: Symbol): String = {
         @inline def isPackageObject = (
           (s.isModule || s.isModuleClass)
@@ -75,26 +73,26 @@ private[iolog4s] object LoggerMacros {
           fullName(s.owner)
         }
       }
-      loggerByParam(q"${fullName(s)}")
+      loggerByParam(q"${fullName(s)}")(f)
     }
 
-    def loggerByType(s: Symbol) = {
+    def loggerByType(s: Symbol)(f: c.Expr[F]) = {
       val typeSymbol: ClassSymbol = (if (s.isModule) s.asModule.moduleClass else s).asClass
       val typeParams = typeSymbol.typeParams
 
       if (typeParams.isEmpty) {
-        loggerByParam(q"classOf[$typeSymbol]")
+        loggerByParam(q"classOf[$typeSymbol]")(f)
       }
       else {
         if (typeParams.exists(_.asType.typeParams.nonEmpty)) {
           /* We have at least one higher-kinded type: fall back to by-name logger construction, as
            * there's no simple way to declare a higher-kinded type with an "any" parameter. */
-          loggerBySymbolName(s)
+          loggerBySymbolName(s)(f)
         }
         else {
           val typeArgs        = List.fill(typeParams.length)(WildcardType)
           val typeConstructor = tq"$typeSymbol[..${typeArgs}]"
-          loggerByParam(q"classOf[$typeConstructor]")
+          loggerByParam(q"classOf[$typeConstructor]")(f)
         }
       }
     }
@@ -108,10 +106,10 @@ private[iolog4s] object LoggerMacros {
     )
 
     if (instanceByName) {
-      loggerBySymbolName(cls)
+      loggerBySymbolName(cls)(f)
     }
     else {
-      loggerByType(cls)
+      loggerByType(cls)(f)
     }
   }
 
