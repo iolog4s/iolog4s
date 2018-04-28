@@ -1,9 +1,12 @@
 # iolog4s
 [![Maven Central](https://img.shields.io/maven-central/v/org.iolog4s/iolog4s_2.12.svg)](https://maven-badges.herokuapp.com/maven-central/org.iolog4s/iolog4s_2.12/badge.svg)
 [![Sonatype](https://img.shields.io/nexus/r/https/oss.sonatype.org/org.iolog4s/iolog4s_2.12.svg)](https://oss.sonatype.org/#nexus-search;quick~iolog4s_2.12)
-[![Scala](https://img.shields.io/badge/scala-2.12.5-brightgreen.svg)](https://github.com/scala/scala/releases/tag/v2.12.5)
+[![Scala](https://img.shields.io/badge/scala-2.11.12-brightgreen.svg)](https://github.com/scala/scala/releases/tag/v2.11.12)
+[![Scala](https://img.shields.io/badge/scala-2.12.6-brightgreen.svg)](https://github.com/scala/scala/releases/tag/v2.12.6)
 
 -------------------------
+
+See [docs](http://iolog4s.org/)
 
 Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
