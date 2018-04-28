@@ -208,4 +208,7 @@ project/plugins/project/
 
 ### Scala ###
 
+### microsite ###
+_site/
+
 # End of https://www.gitignore.io/api/sbt,java,macos,linux,scala,eclipse,intellij
