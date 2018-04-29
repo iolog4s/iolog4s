@@ -10,8 +10,8 @@ See [docs](http://iolog4s.org/)
 
 Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
-```
-"iolog4s.org" %% "iolog4s" % "0.0.1"
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.1"
 ```
 
 ## about
@@ -29,7 +29,7 @@ The vast majority of the development effort goes to the authors of [log4s](https
 
 ## example
 
-```
+```scala
 object Main extends App {
   import org.iolog4s._
   import cats.effect.IO
