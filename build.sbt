@@ -44,7 +44,6 @@ lazy val docs = project
   .enablePlugins(TutPlugin)
   .disablePlugins(ScalafmtPlugin)
   .disablePlugins(ScalafixPlugin)
-  .dependsOn(iolog4s)
   .settings(CommonSettings.commonSettings)
   .settings(PublishingSettings.noPublishSettings)
   .settings(DocsSettings.micrositeSettings)

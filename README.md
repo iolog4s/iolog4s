@@ -6,12 +6,12 @@
 
 -------------------------
 
-See [docs](http://iolog4s.org/)
+See [docs](http://iolog4s.org/iolog4s/)
 
 Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
 ```sbt
-"org.iolog4s" %% "iolog4s" % "0.0.1"
+"org.iolog4s" %% "iolog4s" % "0.0.2"
 ```
 
 ## about

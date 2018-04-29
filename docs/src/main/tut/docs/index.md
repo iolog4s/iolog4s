@@ -5,8 +5,8 @@ title: Getting Started
 
 ## SBT module ids
 
-```scala
-lazy val iolog4s = "iolog4s.org" %% "iolog4s" % "0.0.2"
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.2"
 ```
 
 ## Constructing a logger
