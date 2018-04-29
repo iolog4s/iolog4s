@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 import microsites.MicrositesPlugin.autoImport._
+import com.typesafe.sbt.GitPlugin.autoImport._
 import microsites._
 import tut._
 
@@ -43,7 +44,9 @@ object DocsSettings {
       micrositeFooterText := Some("""Ⓒ 2018 <a href="http://iolog4s.org/">iolog4s</a>"""),
       //------ same as default settings --------
       micrositePushSiteWith      := GHPagesPlugin,
-      micrositeGitHostingService := GitHub
-    ) ++ micrositeTasksSettings
+      micrositeGitHostingService := GitHub,
+      git.remoteRepo := "git@github.com:iolog4s/iolog4s.git"
+
+  ) ++ micrositeTasksSettings
 
 }

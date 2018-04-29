@@ -42,6 +42,7 @@ lazy val iolog4s = project
 lazy val docs = project
   .enablePlugins(MicrositesPlugin)
   .enablePlugins(TutPlugin)
+  .enablePlugins(GitPlugin)
   .disablePlugins(ScalafmtPlugin)
   .disablePlugins(ScalafixPlugin)
   .settings(CommonSettings.commonSettings)
