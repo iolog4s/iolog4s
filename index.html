@@ -22,9 +22,12 @@
 
 <h2 id="sbt-module-ids">SBT module ids</h2>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">lazy</span> <span class="k">val</span> <span class="n">iolog4s</span> <span class="k">=</span> <span class="s">"org.iolog4s"</span> <span class="o">%%</span> <span class="s">"iolog4s"</span> <span class="o">%</span> <span class="s">"0.0.2"</span>
+<pre><code class="language-sbt">"org.iolog4s" %% "iolog4s" % "0.0.3"
 </code></pre>
-</div>
+
+<p>You also need to depend on explicitly on a backend for logging, e.g.:</p>
+<pre><code class="language-sbt">"ch.qos.logback" % "logback-classic" % "1.2.3"
+</code></pre>
 
 <h2 id="credit">Credit</h2>
 
