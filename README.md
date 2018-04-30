@@ -18,7 +18,7 @@ See entire [docs](http://iolog4s.org/iolog4s/) at microsite.
 
 ## super-quick start
 
-Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
+Avaialble for scala versions `2.11`, and `2.12`.
 
 ```sbt
 "org.iolog4s" %% "iolog4s" % "0.0.3"
