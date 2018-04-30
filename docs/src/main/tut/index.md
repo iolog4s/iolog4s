@@ -23,8 +23,13 @@ See [Getting started](docs/index.html)
 
 ## SBT module ids
 
-```scala
-lazy val iolog4s = "org.iolog4s" %% "iolog4s" % "0.0.2"
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.3"
+```
+
+You also need to depend on explicitly on a backend for logging, e.g.:
+```sbt
+"ch.qos.logback" % "logback-classic" % "1.2.3"
 ```
 
 ## Credit

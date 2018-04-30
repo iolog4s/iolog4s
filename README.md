@@ -6,13 +6,7 @@
 
 -------------------------
 
-See [docs](http://iolog4s.org/iolog4s/)
-
-Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
-
-```sbt
-"org.iolog4s" %% "iolog4s" % "0.0.2"
-```
+See entire [docs](http://iolog4s.org/iolog4s/) at microsite.
 
 ## about
 
@@ -22,34 +16,15 @@ Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
 `iolog4s` has the same interface as [`log4s`](https://github.com/Log4s/log4s), except all return types are of type `F[Unit]` where `F[_]: Sync`.
 
+## super-quick start
 
-## on implementation and copyright
+Avaialble for scala versions `2.11`, and `2.12`. SBT artifacts:
 
-The vast majority of the development effort goes to the authors of [log4s](https://github.com/Log4s/log4s), as the code here is mostly altered versions of their macros. So please extend all your thanks to them! It also means that you can expect the same reliability.
-
-## example
-
-```scala
-object Main extends App {
-  import org.iolog4s._
-  import cats.effect.IO
-
-  val logger: Logger[IO] = Logger.create[IO]
-
-  val logs: IO[Unit] = for {
-    _ <- logger.trace("test-trace")
-    _ <- logger.debug("test-debug")
-    _ <- logger.info("test-info")
-    _ <- logger.warn("test-warn")
-    _ <- logger.error("test-error")
-
-  } yield ()
-
-  logs.unsafeRunSync()
-
-}
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.3"
 ```
 
-## what is to be done?
-
-Support for `MDC` is still under development, stay tuned.
+You also need to depend on explicitly on a backend for logging, e.g.:
+```sbt
+"ch.qos.logback" % "logback-classic" % "1.2.3"
+```
