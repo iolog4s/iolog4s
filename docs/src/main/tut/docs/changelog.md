@@ -12,8 +12,8 @@ title: Changelog
   - this allows users of `iolog4s` to easily specify their logging backend w/out creating serious problems when creating fat jars and whatnot
   - updated docs to reflect the need to explicitly depend on a backend
 
-### Contributors:
-[@lorandszakacs](https://github.com/lorandszakacs)
+### Contributors to this version:
+* [@lorandszakacs](https://github.com/lorandszakacs)
 
 -----------------------------------
 
@@ -24,9 +24,9 @@ Added:
 - fixed signature of `Logger.getLogger` from `def create[F[_]]: org.iolog4s.Logger[F]` to `def create[F[_]: Sync]: org.iolog4s.Logger[F]` to force searching for a `Sync` typeclass sooner. Thus yielding better error messages when attempted to be used with something that has no `Sync`
 - loosened access mods in `org.iolog4s.Logger` because macro code would be generated that had no access to the `F: Sync[F[_]]` field. Thus making logger unusable outside of the `org.iolog4s` package.
 
-### Contributors:
-[@lorandszakacs](https://github.com/lorandszakacs)
-[@oleg-py](https://github.com/oleg-py)
+### Contributors to this version:
+* [@lorandszakacs](https://github.com/lorandszakacs)
+* [@oleg-py](https://github.com/oleg-py)
 
 -----------------------------------
 
@@ -55,5 +55,5 @@ object Main extends App {
 }
 ```
 
-### Contributors:
+### Contributors to this version:
 [@lorandszakacs](https://github.com/lorandszakacs)
