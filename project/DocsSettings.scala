@@ -17,9 +17,9 @@ object DocsSettings {
     Seq(
       micrositeName             := "iolog4s",
       micrositeDescription      := "Pure logging library for Scala built on top of cats-effect",
-      micrositeBaseUrl          := "/iolog4s/",
+      micrositeBaseUrl          := "/iolog4s",
       micrositeDocumentationUrl := "/iolog4s/docs/index.html",
-      micrositeHomepage         := "http://iolog4s.org/",
+      micrositeHomepage         := "http://iolog4s.org",
       micrositeGithubOwner      := "iolog4s",
       micrositeGithubRepo       := "iolog4s",
       micrositeHighlightTheme   := "atom-one-light",
