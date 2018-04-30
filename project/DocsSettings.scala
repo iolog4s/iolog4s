@@ -28,13 +28,13 @@ object DocsSettings {
       //micrositeCssDirectory := (resourceDirectory in Compile).value / "microsite" / "styles"
       //micrositeJsDirectory := (resourceDirectory in Compile).value / "microsite" / "scripts"
       micrositePalette := Map(
-        "brand-primary"   -> "#A50000",
-        "brand-secondary" -> "#A50000",
+        "brand-primary"   -> "#000000",
+        "brand-secondary" -> "#5A0303",
         "brand-tertiary"  -> "#000000",
-        "gray-dark"       -> "#000000",
-        "gray"            -> "#A50000",
-        "gray-light"      -> "#A50000",
-        "gray-lighter"    -> "#A50000",
+        "gray-dark"       -> "#453E46",
+        "gray"            -> "#837F84",
+        "gray-light"      -> "#E3E2E3",
+        "gray-lighter"    -> "#F4F3F4",
         "white-color"     -> "#FFFFFF"
       ),
       micrositeFooterText := Some("""Ⓒ 2018 <a href="http://iolog4s.org/">iolog4s</a>"""),
