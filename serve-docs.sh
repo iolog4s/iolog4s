@@ -7,4 +7,4 @@
 #
 
 cd docs/target/site/
-jekyll serve & open http://127.0.0.1:4000/
+jekyll serve & open http://127.0.0.1:4000/iolog4s/index.html
