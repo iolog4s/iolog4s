@@ -4,3 +4,6 @@ options:
 
   - title: MDC-ish
     url: docs/mdc.html
+
+  - title: Changelog
+    url: docs/changelog.html
