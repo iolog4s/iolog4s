@@ -33,9 +33,9 @@ lazy val iolog4s = project
       Dependencies.cats,
       Dependencies.catsEffect,
       Dependencies.slf4jApi,
-      Dependencies.logbackClassic,
       //
-      Dependencies.scalaTest
+      Dependencies.scalaTest,
+      Dependencies.logbackClassic,
     )
   )
 
