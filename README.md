@@ -21,7 +21,7 @@ See entire [docs](http://iolog4s.org/iolog4s/) at microsite.
 Avaialble for scala versions `2.11`, and `2.12`.
 
 ```sbt
-"org.iolog4s" %% "iolog4s" % "0.0.3"
+"org.iolog4s" %% "iolog4s" % "0.0.4"
 ```
 
 You also need to depend on explicitly on a backend for logging, e.g.:

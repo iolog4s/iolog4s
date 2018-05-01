@@ -5,6 +5,13 @@ title: Changelog
 
 -----------------------------------
 
+# 0.0.4 (May 2nd 2018)
+
+* MDC support via pull-request [#4](https://github.com/iolog4s/iolog4s/pull/4) by [@oleg-py](https://github.com/oleg-py)
+
+### Contributors to this version:
+* [@oleg-py](https://github.com/oleg-py)
+
 # 0.0.3 (April 29th 2018)
 
 - remove `logback-classic` as a dependency
