@@ -13,7 +13,7 @@ import org.scalatest.FunSpec
 class ErrorLoggerTest extends FunSpec {
   private def test: ItWord = it
 
-  describe("ERROR") {
+  describe("logger") {
     test("IO") {
       val logger: Logger[IO] = Logger.create[IO]
 
