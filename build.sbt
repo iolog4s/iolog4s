@@ -33,18 +33,18 @@ lazy val iolog4s = project
       Dependencies.cats,
       Dependencies.catsEffect,
       Dependencies.slf4jApi,
-      Dependencies.logbackClassic,
       //
-      Dependencies.scalaTest
+      Dependencies.scalaTest,
+      Dependencies.logbackClassic,
     )
   )
 
 lazy val docs = project
   .enablePlugins(MicrositesPlugin)
   .enablePlugins(TutPlugin)
+  .enablePlugins(GitPlugin)
   .disablePlugins(ScalafmtPlugin)
   .disablePlugins(ScalafixPlugin)
-  .dependsOn(iolog4s)
   .settings(CommonSettings.commonSettings)
   .settings(PublishingSettings.noPublishSettings)
   .settings(DocsSettings.micrositeSettings)

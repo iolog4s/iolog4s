@@ -1,6 +1,7 @@
-package org.iolog4s
+package org.iolog4s_test
 
 import cats.effect.IO
+import org.iolog4s.Logger
 import org.scalatest.FunSpec
 
 /**

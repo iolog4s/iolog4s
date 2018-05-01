@@ -35,8 +35,8 @@ object Dependencies {
   lazy val cats       = "org.typelevel" %% "cats-core"   % "1.1.0"    withSources ()
   lazy val catsEffect = "org.typelevel" %% "cats-effect" % "1.0.0-RC" withSources ()
 
-  lazy val slf4jApi       = "org.slf4j"      % "slf4j-api"       % "1.7.25" withSources ()
-  lazy val logbackClassic = "ch.qos.logback" % "logback-classic" % "1.2.3"  withSources ()
+  lazy val slf4jApi = "org.slf4j" % "slf4j-api" % "1.7.25" withSources ()
 
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.5" % Test withSources ()
+  lazy val logbackClassic = "ch.qos.logback" % "logback-classic" % "1.2.3" % Test withSources ()
+  lazy val scalaTest      = "org.scalatest"  %% "scalatest"      % "3.0.5" % Test withSources ()
 }

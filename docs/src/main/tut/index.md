@@ -10,7 +10,23 @@ layout: home
 
 -------------------------
 
+## usage
+
+See the [getting started]((docs/index.html)) section of the docs
+
+## SBT
+
 Avaialble for scala versions `2.11`, and `2.12`.
+
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.3"
+```
+
+You also need to depend on explicitly on a backend for logging, e.g.:
+```sbt
+"ch.qos.logback" % "logback-classic" % "1.2.3"
+```
+## about
 
 `iolog4s` is a logging library for scala that suspends all your logging side-effects into your chosen `cats.effect.Sync` instance, e.g.:
  * [`cats.effect.IO`](https://github.com/typelevel/cats-effect)
@@ -18,20 +34,11 @@ Avaialble for scala versions `2.11`, and `2.12`.
 
 `iolog4s` has the same interface as [`log4s`](https://github.com/Log4s/log4s), except all return types are of type `F[Unit]` where `F[_]: Sync`.
 
-## usage
-See [Getting started](docs/index.html)
-
-## SBT module ids
-
-```scala
-lazy val iolog4s = "iolog4s.org" %% "iolog4s" % "0.0.2"
-```
-
-## Credit
+## credit
 
 The vast majority of the development effort goes to the authors of [log4s](https://github.com/Log4s/log4s), as the code here is mostly altered versions of their macros. So please extend all your thanks to them! It also means that you can expect the same reliability.
 
-### Maintainers
+### maintainers
 
 Active maintainers:
 * [@lorandszakacs](https://github.com/lorandszakacs)

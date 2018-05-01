@@ -3,12 +3,18 @@ layout: docs
 title: Getting Started
 ---
 
-## SBT module ids
+## SBT
 
-```scala
-lazy val iolog4s = "iolog4s.org" %% "iolog4s" % "0.0.2"
+Avaialble for scala versions `2.11`, and `2.12`.
+
+```sbt
+"org.iolog4s" %% "iolog4s" % "0.0.3"
 ```
 
+You also need to depend on explicitly on a backend for logging, e.g.:
+```sbt
+"ch.qos.logback" % "logback-classic" % "1.2.3"
+```
 ## Constructing a logger
 
 You have three ways of creating a logger:
