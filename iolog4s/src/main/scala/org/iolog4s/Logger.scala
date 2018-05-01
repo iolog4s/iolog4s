@@ -102,17 +102,22 @@ final class Logger[F[_]: Sync](val logger: JLogger) {
 
   def trace(t:   Throwable)(msg: String): F[Unit] = macro traceTM[F]
   def trace(msg: String): F[Unit] = macro traceM[F]
+  def trace(ctx: (String, String)*)(msg: String): F[Unit] = macro traceCM[F]
 
   def debug(t:   Throwable)(msg: String): F[Unit] = macro debugTM[F]
   def debug(msg: String): F[Unit] = macro debugM[F]
+  def debug(ctx: (String, String)*)(msg: String): F[Unit] = macro debugCM[F]
 
   def info(t:   Throwable)(msg: String): F[Unit] = macro infoTM[F]
   def info(msg: String): F[Unit] = macro infoM[F]
+  def info(ctx: (String, String)*)(msg: String): F[Unit] = macro infoCM[F]
 
   def warn(t:   Throwable)(msg: String): F[Unit] = macro warnTM[F]
   def warn(msg: String): F[Unit] = macro warnM[F]
+  def warn(ctx: (String, String)*)(msg: String): F[Unit] = macro warnCM[F]
 
   def error(t:   Throwable)(msg: String): F[Unit] = macro errorTM[F]
   def error(msg: String): F[Unit] = macro errorM[F]
+  def error(ctx: (String, String)*)(msg: String): F[Unit] = macro errorCM[F]
 
 }

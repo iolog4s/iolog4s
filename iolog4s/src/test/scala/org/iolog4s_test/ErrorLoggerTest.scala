@@ -21,7 +21,9 @@ class ErrorLoggerTest extends FunSpec {
         _ <- logger.trace("test-trace")
         _ <- logger.debug("test-debug")
         _ <- logger.info("test-info")
+        _ <- logger.info("structured" -> "logging", "supported" -> "yes")("test-info-context")
         _ <- logger.warn("test-warn")
+        _ <- logger.error("hello" -> "world")("test-error-with-context")
         _ <- logger.error("test-error")
 
       } yield ()
