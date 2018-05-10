@@ -24,7 +24,7 @@ Avaialble for scala versions `2.11`, and `2.12`.
 "org.iolog4s" %% "iolog4s" % "0.0.4"
 ```
 
-You also need to depend on explicitly on a backend for logging, e.g.:
+You also need to depend explicitly on a backend for logging, e.g.:
 ```sbt
 "ch.qos.logback" % "logback-classic" % "1.2.3"
 ```
