@@ -10,6 +10,14 @@ layout: home
 
 -------------------------
 
+# Deprecation notice!
+
+See entire [docs](http://iolog4s.org/iolog4s/) at microsite.
+
+`iolog4s` is no longer maintained. It has been completely integrated into `log4cats` as of its version [`0.0.5`](https://github.com/ChristopherDavenport/log4cats/blob/master/CHANGELOG.md#new-and-noteworthy-for-version-005). I highly recommend you use that instead.
+
+The reason behind this is quite simple, both `iolog4s` and `log4cats` have appeared on the scene at roughly the same time, and we decided to merge the effort of creating a logging library for the typelevel ecosystem.
+
 ## usage
 
 See the [getting started]((docs/index.html)) section of the docs
